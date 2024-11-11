@@ -7,8 +7,8 @@ public class MisionesSO : ScriptableObject
     [System.Serializable]
     public class Mision
     {
-        public string nombre;
-        public bool completado;
+        public string name;
+        public bool complete;
     }
     public List<Mision> misiones = new List<Mision>();
 
@@ -16,9 +16,9 @@ public class MisionesSO : ScriptableObject
     {
         foreach (var mision in misiones)
         {
-            if (mision.nombre == nombre)
+            if (mision.name == nombre)
             {
-                mision.completado = value;
+                mision.complete = value;
                 return;
             }
         }
@@ -28,9 +28,9 @@ public class MisionesSO : ScriptableObject
     {
         foreach (var mision in misiones)
         {
-            if (mision.nombre == nombre)
+            if (mision.name == nombre)
             {
-                return mision.completado;
+                return mision.complete;
             }
         }
         return false; 
