@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -100,6 +100,10 @@ namespace StarterAssets
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
+        private InputAction moveAction;
+        private InputAction lookAction;
+        private InputAction jumpAction;
+        private InputAction sprintAction;
 #endif
         private Animator _animator;
         private CharacterController _controller;
@@ -135,29 +139,70 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
-#else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
-#endif
 
-            AssignAnimationIDs();
+            // Asigna las acciones de entrada
+            moveAction = _playerInput.actions["Move"];
+            lookAction = _playerInput.actions["Look"];
+            jumpAction = _playerInput.actions["Jump"];
+            sprintAction = _playerInput.actions["Sprint"];
+
+            // Registra los métodos para los eventos de entrada
+            moveAction.performed += OnMove;
+            moveAction.canceled += OnMove;
+            lookAction.performed += OnLook;
+            lookAction.canceled += OnLook;
+            jumpAction.performed += OnJump;
+            sprintAction.performed += OnSprint;
+            sprintAction.canceled += OnSprint;
+             AssignAnimationIDs();
 
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
         }
+        private void OnDestroy()
+        {
+            // Desregistra los métodos para evitar errores de memoria
+            moveAction.performed -= OnMove;
+            moveAction.canceled -= OnMove;
+            lookAction.performed -= OnLook;
+            lookAction.canceled -= OnLook;
+            jumpAction.performed -= OnJump;
+            sprintAction.performed -= OnSprint;
+            sprintAction.canceled -= OnSprint;
+        }
+
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            Vector2 input = context.ReadValue<Vector2>();
+            _input.move = input;
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            Vector2 input = context.ReadValue<Vector2>();
+            _input.look = input;
+        }
+
+        public void OnJump(InputAction.CallbackContext context)
+        {
+            _input.jump = context.performed;
+        }
+
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            _input.sprint = context.performed;
+        }
 
         private void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
-
-            JumpAndGravity();
             GroundedCheck();
+            JumpAndGravity();
             Move();
         }
 

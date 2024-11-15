@@ -74,6 +74,14 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 46107cdc-219f-4aa6-aafd-c75098720fb6
+    m_ActionName: Car/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8aaf85c-9074-488f-a0bc-99402c87839b
+    m_ActionName: Car/Brake[/Keyboard/space]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6217510408176775696}
         m_TargetAssemblyTypeName: InputSystemController, Assembly-CSharp
@@ -87,23 +95,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 88ad3476-4c0e-44bc-9b3e-03f0f03d9e80
-    m_ActionName: Base/New action[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b7338465-a4b9-4f1e-b6f0-194521974b3f
-    m_ActionName: Car/Pausar[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 46107cdc-219f-4aa6-aafd-c75098720fb6
-    m_ActionName: Car/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d8aaf85c-9074-488f-a0bc-99402c87839b
-    m_ActionName: Car/Brake[/Keyboard/space]
+    m_ActionId: 31686aa0-3642-45bb-8c9d-b8b2bea5552f
+    m_ActionName: GameManager/Pausar[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 520f27ff-05b2-4e21-9c63-3a4656d135df
+  m_DefaultActionMap: GameManager
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6217510408176775696
