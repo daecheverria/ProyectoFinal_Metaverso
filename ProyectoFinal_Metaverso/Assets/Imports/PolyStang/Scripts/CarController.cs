@@ -2,11 +2,16 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.InputSystem;
 
 namespace PolyStang
 {
     public class CarController : MonoBehaviour
     {
+        private PlayerInput playerInput;
+        private InputAction moveAction;
+        private InputAction brakeAction;
+
         public enum ControlMode // this car controller works for both pc and touch devices. You can switch the control mode from the inspector.
         {
             Keyboard,
@@ -81,49 +86,47 @@ namespace PolyStang
         private CarLights carLights;
         private CarSounds carSounds;
 
-        void Start() // called the first frame, when the game starts.
+        void Awake() // called the first frame, when the game starts.
         {
             carRb = GetComponent<Rigidbody>();
             carRb.centerOfMass = _centerOfMass;
 
             carLights = GetComponent<CarLights>();
             carSounds = GetComponent<CarSounds>();
-        }
-
-        void Update() // called every frame.
-        {
-            GetInputs();
-            AnimateWheels();
-            WheelEffectsCheck();
-            CarLightsControl();
+            playerInput = GetComponent<PlayerInput>();
+            moveAction = playerInput.actions["Move"];
+            brakeAction = playerInput.actions["Brake"];
+            moveAction.performed += OnMove;
+            moveAction.canceled += OnMove;
+            brakeAction.performed += OnBrake;
+            brakeAction.canceled += OnBrake;
         }
 
         void LateUpdate() // called after the "Update()" function.
         {
             Move();
             Steer();
-            BrakeAndDeacceleration();
             UpdateSpeedUI();
+            AnimateWheels();
+            WheelEffectsCheck(); 
+            CarLightsControl();
         }
 
-        public void MoveInput(float input) // used for touch controls.
+         void OnDestroy()
         {
-            moveInput = input;
+            moveAction.performed -= OnMove;
+            moveAction.canceled -= OnMove;
+            brakeAction.performed -= OnBrake;
+            brakeAction.canceled -= OnBrake;
         }
 
-        public void SteerInput(float input) // used for touch controls.
-        {
-            steerInput = input;
-        }
+        public void OnMove(InputAction.CallbackContext context)
+    {
+        Vector2 input = context.ReadValue<Vector2>();
+        moveInput = input.y; 
+        steerInput = input.x; 
+    }
 
-        void GetInputs() // inputs.
-        {
-            if (control == ControlMode.Keyboard)
-            {
-                moveInput = Input.GetAxis("Vertical");
-                steerInput = Input.GetAxis("Horizontal");
-            }
-        }
 
         void Move() // main vertical acceleration.
         {
@@ -133,12 +136,12 @@ namespace PolyStang
                 float currentWheelSpeed = empiricalCoefficient * wheel.wheelCollider.radius * wheel.wheelCollider.rpm;
 
                 if (moveInput > 0 || currentWheelSpeed > 0) // when moving forwards
-                { 
-                    if(currentWheelSpeed > frontMaxSpeed) // important check: it prevents the car from accelerating indefinetly
+                {
+                    if (currentWheelSpeed > frontMaxSpeed) // important check: it prevents the car from accelerating indefinetly
                     {
                         currentWheelSpeed = frontMaxSpeed;
                     }
-                    
+
                     // cases: different speed reducing technics
                     if (typeOfSpeedLimit == TypeOfSpeedLimit.noSpeedLimit)
                     {
@@ -146,7 +149,7 @@ namespace PolyStang
                     }
                     else if (typeOfSpeedLimit == TypeOfSpeedLimit.simple)
                     {
-                        frontSpeedReducer = (frontMaxSpeed - currentWheelSpeed ) / frontMaxSpeed;
+                        frontSpeedReducer = (frontMaxSpeed - currentWheelSpeed) / frontMaxSpeed;
                     }
                     else if (typeOfSpeedLimit == TypeOfSpeedLimit.squareRoot)
                     {
@@ -158,9 +161,9 @@ namespace PolyStang
                 }
                 else if (moveInput < 0 || currentWheelSpeed < 0) // when moving backwards
                 {
-                    if (currentWheelSpeed < - rearMaxSpeed) // important check: it prevents the car from accelerating indefinetly
+                    if (currentWheelSpeed < -rearMaxSpeed) // important check: it prevents the car from accelerating indefinetly
                     {
-                        currentWheelSpeed = - rearMaxSpeed;
+                        currentWheelSpeed = -rearMaxSpeed;
                     }
 
                     // cases: different speed reducing technics
@@ -180,6 +183,7 @@ namespace PolyStang
                     // applying reduction
                     wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * rearSpeedReducer * Time.deltaTime;
                 }
+                
             }
         }
 
@@ -194,8 +198,26 @@ namespace PolyStang
                 }
             }
         }
-
-        void BrakeAndDeacceleration()
+         public void OnBrake(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                // Aplicar freno
+                foreach (var wheel in wheels)
+                {
+                    wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
+                }
+            }
+            else if (context.canceled)
+            {
+                // Quitar freno
+                foreach (var wheel in wheels)
+                {
+                    wheel.wheelCollider.brakeTorque = 0;
+                }
+            }
+        }
+         void BrakeAndDeacceleration()
         {
             if (Input.GetKey(brakeKey)) // when pressing space, the brake is used.
             {
@@ -220,6 +242,7 @@ namespace PolyStang
                 }
             }
         }
+
 
         void AnimateWheels() // to animate wheels accordingly to the car speed.
         {
