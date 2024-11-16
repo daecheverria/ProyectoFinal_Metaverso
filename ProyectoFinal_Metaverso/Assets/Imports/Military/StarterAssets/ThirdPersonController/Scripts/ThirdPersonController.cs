@@ -235,26 +235,32 @@ namespace StarterAssets
             }
         }
 
+        [SerializeField] private float mouseSensitivityMultiplier = 100.0f; // Sensibilidad del mouse
+        [SerializeField] private float touchpadSensitivityMultiplier = 200.0f; // Sensibilidad del touchpad
+
         private void CameraRotation()
         {
-            // if there is an input and camera position is not fixed
+            // Verifica si hay entrada de movimiento de la cámara y si la posición está desbloqueada
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
-                //Don't multiply mouse input by Time.deltaTime;
+                // Ajusta la sensibilidad según el dispositivo de entrada
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+                float sensitivityAdjustment = IsCurrentDeviceMouse ? mouseSensitivityMultiplier : touchpadSensitivityMultiplier;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                // Actualiza las variables de rotación con la entrada ajustada
+                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier * sensitivityAdjustment;
+                _cinemachineTargetPitch -= _input.look.y * deltaTimeMultiplier * sensitivityAdjustment; // Invertir eje Y para control intuitivo
             }
 
-            // clamp our rotations so our values are limited 360 degrees
+            // Restringe los ángulos de rotación para evitar movimientos inesperados
             _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            // Cinemachine will follow this target
+            // Actualiza la rotación del objetivo de la cámara de Cinemachine
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
         }
+
 
         private void Move()
         {
