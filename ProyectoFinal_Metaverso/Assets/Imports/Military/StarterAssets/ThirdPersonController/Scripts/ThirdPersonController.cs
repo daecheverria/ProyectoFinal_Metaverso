@@ -113,6 +113,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        [SerializeField] InstanciaPersonajeSO instanciaPersonaje;
 
         private bool IsCurrentDeviceMouse
         {
@@ -134,6 +135,7 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+            instanciaPersonaje.instancia = this.gameObject;
         }
 
         private void Start()

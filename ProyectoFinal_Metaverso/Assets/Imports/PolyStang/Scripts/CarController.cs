@@ -11,6 +11,7 @@ namespace PolyStang
         private PlayerInput playerInput;
         private InputAction moveAction;
         private InputAction brakeAction;
+        public InstanciaCarroSO instanciaCarro;
 
         public enum ControlMode // this car controller works for both pc and touch devices. You can switch the control mode from the inspector.
         {
@@ -100,6 +101,7 @@ namespace PolyStang
             moveAction.canceled += OnMove;
             brakeAction.performed += OnBrake;
             brakeAction.canceled += OnBrake;
+            instanciaCarro.instancia = this.gameObject;
         }
 
         void LateUpdate() // called after the "Update()" function.
@@ -108,11 +110,11 @@ namespace PolyStang
             Steer();
             UpdateSpeedUI();
             AnimateWheels();
-            WheelEffectsCheck(); 
+            WheelEffectsCheck();
             CarLightsControl();
         }
 
-         void OnDestroy()
+        void OnDestroy()
         {
             moveAction.performed -= OnMove;
             moveAction.canceled -= OnMove;
@@ -121,11 +123,11 @@ namespace PolyStang
         }
 
         public void OnMove(InputAction.CallbackContext context)
-    {
-        Vector2 input = context.ReadValue<Vector2>();
-        moveInput = input.y; 
-        steerInput = input.x; 
-    }
+        {
+            Vector2 input = context.ReadValue<Vector2>();
+            moveInput = input.y;
+            steerInput = input.x;
+        }
 
 
         void Move() // main vertical acceleration.
@@ -183,7 +185,12 @@ namespace PolyStang
                     // applying reduction
                     wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * rearSpeedReducer * Time.deltaTime;
                 }
-                
+                else if (moveInput == 0) // Sin entrada de usuario
+                {
+                    // Aplicar desaceleración gradual
+                    wheel.wheelCollider.brakeTorque = 300 * noInputDeacceleration * Time.deltaTime;
+                }
+
             }
         }
 
@@ -198,7 +205,7 @@ namespace PolyStang
                 }
             }
         }
-         public void OnBrake(InputAction.CallbackContext context)
+        public void OnBrake(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
@@ -217,7 +224,7 @@ namespace PolyStang
                 }
             }
         }
-         void BrakeAndDeacceleration()
+        void BrakeAndDeacceleration()
         {
             if (Input.GetKey(brakeKey)) // when pressing space, the brake is used.
             {

@@ -1,32 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using PolyStang;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputSystemController : MonoBehaviour
 {
     [SerializeField] GameObject menuPausa;
     static bool pausado;
     private GameObject menuPausaInstancia;
+    public InstanciaPersonajeSO personajeSO;
+    public InstanciaCarroSO carroSO;
+    public bool dentroCarro;
+    public float distanciaMinima;
+    void Awake()
+    {
+        dentroCarro = false;
+    }
     public void Pausar(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            pausado = !pausado;
-            if (!pausado)
+            if (context.performed)
             {
-                Time.timeScale = 0;
-                menuPausaInstancia = Instantiate(menuPausa);
-            }
-            else
-            {
-                Time.timeScale = 1;
-                if (menuPausaInstancia != null)
+                pausado = !pausado;
+                if (!pausado)
                 {
-                    Destroy(menuPausaInstancia);
+                    Time.timeScale = 0;
+                    menuPausaInstancia = Instantiate(menuPausa);
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    if (menuPausaInstancia != null)
+                    {
+                        Destroy(menuPausaInstancia);
+                    }
                 }
             }
         }
+    }
+    public void CambiarCarro(InputAction.CallbackContext context)
+    {
+        if (context.performed && personajeSO.instancia != null && carroSO.instancia != null)
+        {
+            float distancia = Vector3.Distance(personajeSO.instancia.transform.position, carroSO.instancia.transform.position);
+            if (distancia <= distanciaMinima && !dentroCarro)
+            {
+                EntrarCarro();
+            }
+            else if (dentroCarro)
+            {
+                SalirCarro();
+            }
+        }
+    }
+
+    void EntrarCarro()
+    {
+        dentroCarro = true;
+        personajeSO.instancia.SetActive(false);
+        carroSO.instancia.GetComponent<PlayerInput>().enabled = true;
+        carroSO.instancia.GetComponent<CarSounds>().enabled = true;
+        carroSO.instancia.GetComponent<AudioSource>().enabled = true;
+
+    }
+    void SalirCarro()
+    {
+        dentroCarro = false;
+        Vector3 nuevaPosicion = carroSO.instancia.transform.position + (carroSO.instancia.transform.right * -2.0f);
+        personajeSO.instancia.transform.position = nuevaPosicion;
+        personajeSO.instancia.SetActive(true);
+        CharacterController controller = personajeSO.instancia.GetComponent<CharacterController>();
+        controller.enabled = false;
+        personajeSO.instancia.transform.position = nuevaPosicion;
+        controller.enabled = true;
+        carroSO.instancia.GetComponent<PlayerInput>().enabled = false;
+        carroSO.instancia.GetComponent<CarSounds>().enabled = false;
+        carroSO.instancia.GetComponent<AudioSource>().enabled = false;
     }
 }

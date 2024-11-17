@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fcdf24b397b034285cf8eb90587032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  misiones: {fileID: 0}
-  easterEggs: {fileID: 0}
+  misiones: {fileID: 11400000, guid: 21bd4404e634eeb439e7565aaddb5e51, type: 2}
+  easterEggs: {fileID: 11400000, guid: bde0e1cfb00cb744e9316098a854a6a1, type: 2}
 --- !u!114 &4150422384206853600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +97,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 31686aa0-3642-45bb-8c9d-b8b2bea5552f
     m_ActionName: GameManager/Pausar[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4291a4c3-d41d-47d1-a7b2-f50c39dc9783
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a307fe54-2c7e-458e-92e2-e292085ccbfb
+    m_ActionName: Player/Look[/Mouse/delta,/Touchscreen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 11a93083-0fcb-401a-9eb7-c4107996c446
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0e04381e-4520-498c-934d-f6414dbb3630
+    m_ActionName: Player/Sprint[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameManager
