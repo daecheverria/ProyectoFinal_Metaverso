@@ -251,7 +251,7 @@ namespace StarterAssets
 
                 // Actualiza las variables de rotación con la entrada ajustada
                 _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier * sensitivityAdjustment;
-                _cinemachineTargetPitch -= _input.look.y * deltaTimeMultiplier * sensitivityAdjustment; // Invertir eje Y para control intuitivo
+                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier * sensitivityAdjustment; // Invertir eje Y para control intuitivo
             }
 
             // Restringe los ángulos de rotación para evitar movimientos inesperados
