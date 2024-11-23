@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 3c72c78ef636a1249ba9badd85f6bf84
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: d8610d85906435341bdf5a427b01db02
+    m_Address: Assets/Material/New Material 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 60c41a81bb4dc934d9af29f16eaa701b, type: 2}
   m_SchemaSet:
