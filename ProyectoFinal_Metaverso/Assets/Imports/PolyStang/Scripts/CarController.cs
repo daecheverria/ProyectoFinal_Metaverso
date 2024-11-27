@@ -66,8 +66,8 @@ namespace PolyStang
             squareRoot
         };
         public TypeOfSpeedLimit typeOfSpeedLimit = TypeOfSpeedLimit.squareRoot;
-        private float frontSpeedReducer = 1;
-        private float rearSpeedReducer = 1;
+        [SerializeField] float frontSpeedReducer = 1;
+        [SerializeField] float rearSpeedReducer = 1;
 
         [Header("Skid")]
         public float brakeDriftingSkidLimit = 10f;
@@ -130,69 +130,35 @@ namespace PolyStang
         }
 
 
-        void Move() // main vertical acceleration.
+        void Move()
         {
             foreach (var wheel in wheels)
             {
-                // rotational speed is proportional to radius * frequency: the empirical coefficient is around 0.41
+                // Rotational speed is proportional to radius * frequency: the empirical coefficient is around 0.41
                 float currentWheelSpeed = empiricalCoefficient * wheel.wheelCollider.radius * wheel.wheelCollider.rpm;
 
-                if (moveInput > 0 || currentWheelSpeed > 0) // when moving forwards
+                if (moveInput != 0) // Permitir torque incluso desde el reposo
                 {
-                    if (currentWheelSpeed > frontMaxSpeed) // important check: it prevents the car from accelerating indefinetly
-                    {
-                        currentWheelSpeed = frontMaxSpeed;
-                    }
+                    // Determinar el reductor según el movimiento hacia adelante o hacia atrás
+                    float speedReducer = moveInput > 0 ? frontSpeedReducer : rearSpeedReducer;
 
-                    // cases: different speed reducing technics
-                    if (typeOfSpeedLimit == TypeOfSpeedLimit.noSpeedLimit)
-                    {
-                        frontSpeedReducer = 1;
-                    }
-                    else if (typeOfSpeedLimit == TypeOfSpeedLimit.simple)
-                    {
-                        frontSpeedReducer = (frontMaxSpeed - currentWheelSpeed) / frontMaxSpeed;
-                    }
-                    else if (typeOfSpeedLimit == TypeOfSpeedLimit.squareRoot)
-                    {
-                        frontSpeedReducer = Mathf.Sqrt(Mathf.Abs((frontMaxSpeed - currentWheelSpeed) / frontMaxSpeed));
-                    }
-
-                    // applying reduction
-                    wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * frontSpeedReducer * Time.deltaTime;
+                    // Aplicar torque al motor
+                    wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * speedReducer * Time.deltaTime;
+                    wheel.wheelCollider.brakeTorque = 0; // Asegurarse de que no haya freno residual
                 }
-                else if (moveInput < 0 || currentWheelSpeed < 0) // when moving backwards
+                else if (carRb.velocity.magnitude > 0.1f) // Sin entrada de usuario pero el carro aún se mueve
                 {
-                    if (currentWheelSpeed < -rearMaxSpeed) // important check: it prevents the car from accelerating indefinetly
-                    {
-                        currentWheelSpeed = -rearMaxSpeed;
-                    }
-
-                    // cases: different speed reducing technics
-                    if (typeOfSpeedLimit == TypeOfSpeedLimit.noSpeedLimit)
-                    {
-                        rearSpeedReducer = 1;
-                    }
-                    else if (typeOfSpeedLimit == TypeOfSpeedLimit.simple)
-                    {
-                        rearSpeedReducer = (rearMaxSpeed + currentWheelSpeed) / rearMaxSpeed;
-                    }
-                    else if (typeOfSpeedLimit == TypeOfSpeedLimit.squareRoot)
-                    {
-                        rearSpeedReducer = Mathf.Sqrt(Mathf.Abs((rearMaxSpeed + currentWheelSpeed) / rearMaxSpeed));
-                    }
-
-                    // applying reduction
-                    wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * rearSpeedReducer * Time.deltaTime;
-                }
-                else if (moveInput == 0) // Sin entrada de usuario
-                {
-                    // Aplicar desaceleración gradual
                     wheel.wheelCollider.brakeTorque = 300 * noInputDeacceleration * Time.deltaTime;
+                    wheel.wheelCollider.motorTorque = 0; // No aplicar par motor si no hay entrada
                 }
-
+                else // El carro está completamente detenido y sin entrada
+                {
+                    wheel.wheelCollider.motorTorque = 0;
+                    wheel.wheelCollider.brakeTorque = 0; // No bloquear las ruedas innecesariamente
+                }
             }
         }
+
 
         void Steer() // to rotate the front wheels, when steering.
         {
