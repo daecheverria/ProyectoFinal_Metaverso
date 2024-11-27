@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44590553333760
-    m_Localized: Mientras que no sea com la del juego
+    m_Localized: Mientras que no sea como la del juego
     m_Metadata:
       m_Items: []
   - m_Id: 45192452734976
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 46709289222144
-    m_Localized: Ay mi madre El Bicho!
+    m_Localized: Ay mi madre! El Bicho!
     m_Metadata:
       m_Items: []
   references:

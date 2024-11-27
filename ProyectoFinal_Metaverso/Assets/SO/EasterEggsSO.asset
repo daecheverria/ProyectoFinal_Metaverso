@@ -32,8 +32,8 @@ MonoBehaviour:
   - nombre: Pochita
     nombrekey: EE5N
     descripcionkey: EE5D
-    completado: 1
+    completado: 0
   - nombre: Bicho
     nombrekey: EE6N
     descripcionkey: EE6D
-    completado: 1
+    completado: 0

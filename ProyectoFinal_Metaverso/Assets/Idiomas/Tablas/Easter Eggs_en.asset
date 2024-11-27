@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 47734317056
-    m_Localized: You found Homer
+    m_Localized: You found Homer!
     m_Metadata:
       m_Items: []
   - m_Id: 13424910336
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 43030830088192
-    m_Localized: "What\xB4s that?"
+    m_Localized: What's that?
     m_Metadata:
       m_Items: []
   - m_Id: 43023490056192
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 44590553333760
-    m_Localized: As long as it's not like the game
+    m_Localized: As long as it's not like the one of the game
     m_Metadata:
       m_Items: []
   - m_Id: 45192452734976
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 46709289222144
-    m_Localized: Oh fuck El Bicho
+    m_Localized: Oh my God! The Bicho
     m_Metadata:
       m_Items: []
   references:
