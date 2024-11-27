@@ -26,6 +26,46 @@ MonoBehaviour:
     m_Localized: D'oh!
     m_Metadata:
       m_Items: []
+  - m_Id: 38824828174336
+    m_Localized: "Buenos d\xEDas, buenas tardes y buenas nochas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38853433327616
+    m_Localized: "Que hace eso ah\xED?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43023490056192
+    m_Localized: Pildora roja o azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43030830088192
+    m_Localized: Que es eso?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44584488370176
+    m_Localized: Bee!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44590553333760
+    m_Localized: Mientras que no sea com la del juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45192452734976
+    m_Localized: Chainsawman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45198345732096
+    m_Localized: Un peluche de Pochita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46685343940608
+    m_Localized: SIUU!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46709289222144
+    m_Localized: Ay mi madre El Bicho!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
