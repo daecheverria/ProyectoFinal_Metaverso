@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 public class MenuPrincipal : MonoBehaviour
 {
     [SerializeField] DialogosSO dialogos;
+     [SerializeField] GameObject menu;
     public void NuevoJuego()
     {   
         dialogos.SetAllCheckboxesFalse();
-        SceneManager.LoadScene(1);
+        menu.SetActive(false);
+        PantallaCarga.Instance.CargarEscena(1);
     }
 }

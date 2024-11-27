@@ -17,3 +17,7 @@ MonoBehaviour:
     nombrekey: EE1N
     descripcionkey: EE1D
     completado: 1
+  - nombre: Homero
+    nombrekey: EE1N
+    descripcionkey: EE1D
+    completado: 0
