@@ -5,60 +5,57 @@ using UnityEngine.AI;
 
 public class DemonScript : MonoBehaviour
 {
-    public Camera assignedCamera; // Cámara asignada desde el inspector
-    public float detectionAngle = 30f; // Ángulo de visión de la cámara
     public Animator animator;
 
     public Transform player; // Transform del jugador principal asignado desde el inspector
-    public float moveSpeed = 2f; // Velocidad de movimiento del enemigo
+    public float moveSpeed = 2.5f; // Velocidad de movimiento del enemigo
     public NavMeshAgent IA;
-    private bool isWalking;
 
-    //public bool IsCameraSeeingEnemy()
-    //{
-    //    if (assignedCamera == null)
-    //    {
-    //        Debug.LogError("La cámara no está asignada en el inspector.");
-    //        return false;
-    //    }
-
-    //    Vector3 viewportPosition = assignedCamera.WorldToViewportPoint(transform.position);
-    //    bool isInViewport = viewportPosition.z > 0 &&
-    //                        viewportPosition.x > 0 && viewportPosition.x < 1 &&
-    //                        viewportPosition.y > 0 && viewportPosition.y < 1;
-    //    if (!isInViewport){
-    //        return false;
-    //    }
-
-    //    // Lanza un Raycast para verificar si algo bloquea la vista al enemigo
-    //    Vector3 directionToEnemy = (transform.position - assignedCamera.transform.position).normalized;
-    //    RaycastHit hit;
-
-    //    if (Physics.Raycast(assignedCamera.transform.position, directionToEnemy, out hit))
-    //    {
-    //        return hit.transform == transform;
-    //    }
-    //    return false;
-    //}
+    public GameObject ob1;
+    public GameObject ob2;
+    public GameObject ob3;
 
     private void Update()
     {
-
+        //float num = CheckObjects();
         animator.SetBool("isWalking", true);
-        IA.speed = moveSpeed;
+        IA.speed = moveSpeed; //*num;
         IA.SetDestination(player.position);
-        Debug.Log("Debería estar caminando");
-
-        //if (!IsCameraSeeingEnemy())
-        //{
-        //    animator.SetBool("isWalking", true);
-        //    IA.speed = moveSpeed;
-        //    IA.SetDestination(player.position);
-        //    Debug.Log("Debería estar caminando");
-        //}
-        //else
-        //{
-        //    animator.SetBool("isWalking", false);
-        //}
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verifica si el objeto que entró en el trigger es el personaje principal
+        if (other.CompareTag("Player"))
+        {
+            // Destruye el objeto
+            Debug.Log("Fin del juego: Un enemigo te tocó");
+        }
+    }
+
+    //private float CheckObjects()
+    //{
+    //    float num = 1f;
+    //    int num1 = 0;
+    //    int num2 = 0;
+    //    int num3 = 0;
+    //    if (ob1 == null)
+    //    {
+    //        num1 = 1;
+    //    }
+    //    if (ob2 == null)
+    //    {
+    //        num2 = 1;
+    //    }
+    //    if (ob3 == null)
+    //    {
+    //        num3 = 1;
+    //    }
+    //    if (num1+num2+num3 >= 3)
+    //    {
+    //        num = 2f;
+    //        Debug.Log("Debería aumentar la velocidad");
+    //    }
+    //    return num;
+    //}
 }
