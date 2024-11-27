@@ -134,19 +134,34 @@ namespace PolyStang
         {
             foreach (var wheel in wheels)
             {
-                // Rotational speed is proportional to radius * frequency: the empirical coefficient is around 0.41
+                // Rotational speed es proporcional a radius * frequency
                 float currentWheelSpeed = empiricalCoefficient * wheel.wheelCollider.radius * wheel.wheelCollider.rpm;
+                float currentCarSpeed = carRb.velocity.magnitude * 3.6f; // Convertir a km/h
 
-                if (moveInput != 0) // Permitir torque incluso desde el reposo
+                if (brakeAction.ReadValue<float>() > 0) // Si el freno está activado
                 {
-                    // Determinar el reductor según el movimiento hacia adelante o hacia atrás
-                    float speedReducer = moveInput > 0 ? frontSpeedReducer : rearSpeedReducer;
+                    wheel.wheelCollider.motorTorque = 0;
+                    wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
+                }
+                else if (moveInput != 0) // Permitir torque incluso desde el reposo
+                {
+                    // Determinar el límite de velocidad basado en la dirección del movimiento
+                    float speedLimit = moveInput > 0 ? frontMaxSpeed : rearMaxSpeed;
 
-                    // Aplicar torque al motor
-                    wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * speedReducer * Time.deltaTime;
+                    if (currentCarSpeed < speedLimit) // Solo aplica torque si está dentro del límite
+                    {
+                        float speedReducer = moveInput > 0 ? frontSpeedReducer : rearSpeedReducer;
+                        wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * speedReducer * Time.deltaTime;
+                    }
+                    else
+                    {
+                        // Si se excede el límite, no aplica torque
+                        wheel.wheelCollider.motorTorque = 0;
+                    }
+
                     wheel.wheelCollider.brakeTorque = 0; // Asegurarse de que no haya freno residual
                 }
-                else if (carRb.velocity.magnitude > 0.1f) // Sin entrada de usuario pero el carro aún se mueve
+                else if (currentCarSpeed > 0.1f) // Sin entrada de usuario pero el carro aún se mueve
                 {
                     wheel.wheelCollider.brakeTorque = 300 * noInputDeacceleration * Time.deltaTime;
                     wheel.wheelCollider.motorTorque = 0; // No aplicar par motor si no hay entrada
@@ -158,6 +173,7 @@ namespace PolyStang
                 }
             }
         }
+
 
 
         void Steer() // to rotate the front wheels, when steering.

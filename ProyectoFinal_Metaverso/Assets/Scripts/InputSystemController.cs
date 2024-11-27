@@ -15,6 +15,7 @@ public class InputSystemController : MonoBehaviour
     public InstanciaCarroSO carroSO;
     public bool dentroCarro;
     public float distanciaMinima;
+    public GameObject carroCanvas;
     void Awake()
     {
         dentroCarro = false;
@@ -65,6 +66,8 @@ public class InputSystemController : MonoBehaviour
         carroSO.instancia.GetComponent<PlayerInput>().enabled = true;
         carroSO.instancia.GetComponent<CarSounds>().enabled = true;
         carroSO.instancia.GetComponent<AudioSource>().enabled = true;
+        carroCanvas = carroSO.instancia.transform.GetChild(0).gameObject;
+        carroCanvas.SetActive(true);
 
     }
     void SalirCarro()
@@ -80,5 +83,7 @@ public class InputSystemController : MonoBehaviour
         carroSO.instancia.GetComponent<PlayerInput>().enabled = false;
         carroSO.instancia.GetComponent<CarSounds>().enabled = false;
         carroSO.instancia.GetComponent<AudioSource>().enabled = false;
+        carroCanvas = carroSO.instancia.transform.GetChild(0).gameObject;
+        carroCanvas.SetActive(false);
     }
 }
