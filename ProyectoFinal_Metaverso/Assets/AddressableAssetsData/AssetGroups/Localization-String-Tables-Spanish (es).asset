@@ -29,6 +29,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebb3e5d6e1623ad4d84935feccfbc8fb
+    m_Address: Easter Eggs_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 60c41a81bb4dc934d9af29f16eaa701b, type: 2}
   m_SchemaSet:

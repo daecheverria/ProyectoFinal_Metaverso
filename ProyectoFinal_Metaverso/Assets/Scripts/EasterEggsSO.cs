@@ -8,6 +8,8 @@ public class EasterEggsSO : ScriptableObject
     public class EasterEgg
     {
         public string nombre;
+        public string nombrekey;
+        public string descripcionkey;
         public bool completado;
     }
     public List<EasterEgg> easterEggs = new List<EasterEgg>();
@@ -34,5 +36,9 @@ public class EasterEggsSO : ScriptableObject
             }
         }
         return false; 
+    }
+    public EasterEgg GetEasterEggByName(string nombre)
+    {
+        return easterEggs.Find(ee => ee.nombre == nombre);
     }
 }

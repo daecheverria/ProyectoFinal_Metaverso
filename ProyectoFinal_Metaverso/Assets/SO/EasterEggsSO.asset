@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b874e07fd0420f74c83095e2dad70b59, type: 3}
   m_Name: EasterEggsSO
   m_EditorClassIdentifier: 
-  easterEggs: []
+  easterEggs:
+  - nombre: Homero
+    nombrekey: EE1N
+    descripcionkey: EE1D
+    completado: 1
