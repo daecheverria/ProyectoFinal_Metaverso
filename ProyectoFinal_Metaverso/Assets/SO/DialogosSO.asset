@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ee17e2a93965e43a57d73367065538, type: 3}
-  m_Name: InstanciaCarroCanvas
+  m_Script: {fileID: 11500000, guid: 676ff8e6464717242a3aeecdd1917d11, type: 3}
+  m_Name: DialogosSO
   m_EditorClassIdentifier: 
-  instancia: {fileID: 0}
+  dialogos:
+  - dialogoID: intro
+    reproducido: 0

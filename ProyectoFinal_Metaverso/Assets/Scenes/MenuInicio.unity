@@ -1519,6 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1df9c9936a6f74ebd9d4424c486cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogos: {fileID: 11400000, guid: babbcd6f4fe4e1746b30c17ec932fee5, type: 2}
 --- !u!1 &1402237468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2182,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 5334340306124276127, guid: 1d14b846ac52a8c44810d851767f4c21, type: 3}
+  personajeSO: {fileID: 0}
+  carroSO: {fileID: 0}
+  dentroCarro: 0
+  distanciaMinima: 0
+  carroCanvas: {fileID: 0}
 --- !u!114 &2082937267
 MonoBehaviour:
   m_ObjectHideFlags: 0

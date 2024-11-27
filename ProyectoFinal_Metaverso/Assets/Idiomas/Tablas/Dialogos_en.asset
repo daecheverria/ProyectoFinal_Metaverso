@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogos_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 07b8dcd7655183147aea64c656dc5b1d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9465487360
+    m_Localized: '"Enter" to continue.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 378572627968
+    m_Localized: 'You: "Where am I?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14382053449728
+    m_Localized: '"..."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24073500352512
+    m_Localized: '"..."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24552116576256
+    m_Localized: '"..."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24643783090176
+    m_Localized: '"..."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24647285334016
+    m_Localized: 'You: "BETTER START DOING THOSE MISSIONS"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24549046345728
+    m_Localized: 'You: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24079858917376
+    m_Localized: 'Misterious voice: "GOOD LUCK ON YOU ROAD AHEAD"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24069608038400
+    m_Localized: 'You: "What is this place?"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24076708995072
+    m_Localized: 'Misterious voice: "WELCOME TO SU MIL TONIA. IF YOU WANT TO RETURN
+      TO YOUR LIFE, YOU MUST COMPLETE THE MISSIONS ACROSS THE CITY"'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
