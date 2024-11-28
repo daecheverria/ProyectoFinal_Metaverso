@@ -41,4 +41,11 @@ public class EasterEggsSO : ScriptableObject
     {
         return easterEggs.Find(ee => ee.nombre == nombre);
     }
+    public void SetAllCheckboxesFalse()
+{
+    foreach (var easterEgg in easterEggs)
+    {
+        easterEgg.completado = false;
+    }
+}
 }

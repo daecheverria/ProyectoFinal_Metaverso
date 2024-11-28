@@ -22,6 +22,38 @@ MonoBehaviour:
     m_Localized: New Game
     m_Metadata:
       m_Items: []
+  - m_Id: 9048024580206592
+    m_Localized: Press "E" to enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048089772273664
+    m_Localized: Press "E" to exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076915406102528
+    m_Localized: Save and exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076879230230528
+    m_Localized: See easter eggs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076855314309120
+    m_Localized: See missions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077966255415296
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9127615389491200
+    m_Localized: Load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9127689691586560
+    m_Localized: The cursed awakening
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

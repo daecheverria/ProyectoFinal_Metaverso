@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Misiones_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 634882f439d40ca4caab696467584d89, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6789521408
+    m_Localized: "Misi\xF3n 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78738612224
+    m_Localized: "Misi\xF3n 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84392534016
+    m_Localized: "Misi\xF3n 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21536694272
+    m_Localized: Llega al final en el parkour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80969981952
+    m_Localized: 'Completa '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87060111360
+    m_Localized: Termina la carrera
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

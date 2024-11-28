@@ -22,6 +22,40 @@ MonoBehaviour:
     m_Localized: Nuevo Juego
     m_Metadata:
       m_Items: []
+  - m_Id: 9048024580206592
+    m_Localized: Presione "E" para entrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048089772273664
+    m_Localized: Presione "E" para salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076915406102528
+    m_Localized: Guardar y salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076879230230528
+    m_Localized: Ver easter eggs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076855314309120
+    m_Localized: Ver misiones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077966255415296
+    m_Localized: 'Pausado
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9127615389491200
+    m_Localized: Cargar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9127689691586560
+    m_Localized: El despertar maldito
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

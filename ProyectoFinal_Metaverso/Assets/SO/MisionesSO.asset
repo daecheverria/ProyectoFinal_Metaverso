@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: MisionesSO
   m_EditorClassIdentifier: 
   misiones:
-  - name: 
+  - name: M1N
+    descripcion: M1D
+    complete: 0
+  - name: M2N
+    descripcion: M2D
+    complete: 0
+  - name: M3N
+    descripcion: M3D
     complete: 0

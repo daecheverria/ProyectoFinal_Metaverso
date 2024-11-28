@@ -26,10 +26,16 @@ public class InputSystemController : MonoBehaviour
         {
             if (context.performed)
             {
-                pausado = !pausado;
+                Pausa();
+            }
+        }
+    }
+    public void Pausa(){
+        pausado = !pausado;
                 if (!pausado)
                 {
                     Time.timeScale = 0;
+                    Cursor.lockState = CursorLockMode.None;
                     menuPausaInstancia = Instantiate(menuPausa);
                 }
                 else
@@ -40,8 +46,6 @@ public class InputSystemController : MonoBehaviour
                         Destroy(menuPausaInstancia);
                     }
                 }
-            }
-        }
     }
     public void CambiarCarro(InputAction.CallbackContext context)
     {

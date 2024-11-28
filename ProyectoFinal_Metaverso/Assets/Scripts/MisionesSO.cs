@@ -8,6 +8,7 @@ public class MisionesSO : ScriptableObject
     public class Mision
     {
         public string name;
+        public string descripcion;
         public bool complete;
     }
     public List<Mision> misiones = new List<Mision>();
@@ -35,4 +36,11 @@ public class MisionesSO : ScriptableObject
         }
         return false; 
     }
+    public void SetAllCheckboxesFalse()
+{
+    foreach (var mision in misiones)
+    {
+        mision.complete = false;
+    }
+}
 }
