@@ -43,6 +43,14 @@ MonoBehaviour:
     m_Key: Pausa
     m_Metadata:
       m_Items: []
+  - m_Id: 9116921973694464
+    m_Key: Cargar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9117170012250112
+    m_Key: Titulo
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

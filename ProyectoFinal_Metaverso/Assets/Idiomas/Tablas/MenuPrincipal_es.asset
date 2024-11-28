@@ -48,6 +48,14 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 9116921973694464
+    m_Localized: Cargar juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9117170012250112
+    m_Localized: El despertar maldito
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
