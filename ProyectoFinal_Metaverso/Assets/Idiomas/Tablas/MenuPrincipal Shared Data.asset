@@ -19,6 +19,14 @@ MonoBehaviour:
     m_Key: NuevoJuego
     m_Metadata:
       m_Items: []
+  - m_Id: 9048024580206592
+    m_Key: 'Entrar '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9048089772273664
+    m_Key: Salir
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
