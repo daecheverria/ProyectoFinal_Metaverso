@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5157f0b402e3eb044a256a130ffa4f65
   m_SerializeEntries:
+  - m_GUID: 2af5fa30f27ffc745851eacea95b5382
+    m_Address: HorrorScene_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45a8ac1cf01e9ca4ea30efe3596b8250
     m_Address: Dialogos_es
     m_ReadOnly: 1

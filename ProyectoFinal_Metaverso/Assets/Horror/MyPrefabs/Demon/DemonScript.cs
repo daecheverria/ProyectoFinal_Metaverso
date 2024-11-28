@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class DemonScript : MonoBehaviour
 {
@@ -11,9 +12,6 @@ public class DemonScript : MonoBehaviour
     public float moveSpeed = 2.5f; // Velocidad de movimiento del enemigo
     public NavMeshAgent IA;
 
-    public GameObject ob1;
-    public GameObject ob2;
-    public GameObject ob3;
 
     private void Update()
     {
@@ -30,32 +28,8 @@ public class DemonScript : MonoBehaviour
         {
             // Destruye el objeto
             Debug.Log("Fin del juego: Un enemigo te tocó");
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
         }
     }
-
-    //private float CheckObjects()
-    //{
-    //    float num = 1f;
-    //    int num1 = 0;
-    //    int num2 = 0;
-    //    int num3 = 0;
-    //    if (ob1 == null)
-    //    {
-    //        num1 = 1;
-    //    }
-    //    if (ob2 == null)
-    //    {
-    //        num2 = 1;
-    //    }
-    //    if (ob3 == null)
-    //    {
-    //        num3 = 1;
-    //    }
-    //    if (num1+num2+num3 >= 3)
-    //    {
-    //        num = 2f;
-    //        Debug.Log("Debería aumentar la velocidad");
-    //    }
-    //    return num;
-    //}
 }

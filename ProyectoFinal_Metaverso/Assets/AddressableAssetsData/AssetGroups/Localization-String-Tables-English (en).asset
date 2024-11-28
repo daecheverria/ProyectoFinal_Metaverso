@@ -29,6 +29,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 800b6260ef1e8b748af132a1f4bf1f0f
+    m_Address: HorrorScene_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e0ab05cad369df4b92f9586ff5976c2
     m_Address: MenuPrincipal_en
     m_ReadOnly: 1
