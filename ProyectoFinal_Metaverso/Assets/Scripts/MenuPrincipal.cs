@@ -7,6 +7,8 @@ public class MenuPrincipal : MonoBehaviour
     [SerializeField] GameObject menu;
     public void NuevoJuego()
     {   
+        //GameManager.instance.SaveData();
+        //GameManager.instance.LoadData();
         dialogos.SetAllCheckboxesFalse();
         GameManager.instance.easterEggs.SetAllCheckboxesFalse();
         GameManager.instance.misiones.SetAllCheckboxesFalse();
