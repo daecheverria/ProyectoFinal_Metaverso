@@ -16,19 +16,19 @@ MonoBehaviour:
   - nombre: Homero
     nombrekey: EE1N
     descripcionkey: EE1D
-    completado: 1
+    completado: 0
   - nombre: Truman
     nombrekey: EE2N
     descripcionkey: EE2D
-    completado: 1
+    completado: 0
   - nombre: Matrix
     nombrekey: EE3N
     descripcionkey: EE3D
-    completado: 1
+    completado: 0
   - nombre: Goat
     nombrekey: EE4N
     descripcionkey: EE4D
-    completado: 1
+    completado: 0
   - nombre: Pochita
     nombrekey: EE5N
     descripcionkey: EE5D
