@@ -26,4 +26,7 @@ public class ControladorPausa : MonoBehaviour
         scroll.SetActive(false);
         boton.SetActive(false);
     }
+    public void Salir(){
+        Application.Quit();
+    }
 }
