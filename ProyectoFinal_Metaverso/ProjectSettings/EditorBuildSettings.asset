@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OldHouse.unity
     guid: 8c345d84fe8483740b4ced39bfdc6c80
+  - enabled: 1
+    path: Assets/Scenes/parkour.unity
+    guid: 6be0f8d2ec24f51409b9f23822852746
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c287c2c7c2d64fe48b3a64dfceb303dd, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: f4fd2de0d8d1abf4fb726dd28034db06, type: 2}
