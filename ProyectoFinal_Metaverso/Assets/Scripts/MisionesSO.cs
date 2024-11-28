@@ -8,6 +8,7 @@ public class MisionesSO : ScriptableObject
     public class Mision
     {
         public string name;
+        public string descripcion;
         public bool complete;
     }
     public List<Mision> misiones = new List<Mision>();

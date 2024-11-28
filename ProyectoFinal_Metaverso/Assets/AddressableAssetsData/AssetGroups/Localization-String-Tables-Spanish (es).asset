@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5100a66567a81224d99db1f8fb22758d
+    m_Address: Misiones_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a2e91668dcb8b284e99c670c9939d48d
     m_Address: MenuPrincipal_es
     m_ReadOnly: 1

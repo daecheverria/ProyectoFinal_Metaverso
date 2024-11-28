@@ -10,42 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: MenuPrincipal_es
+  m_Name: Misiones_es
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: es
-  m_SharedData: {fileID: 11400000, guid: 024ef5820c1a7a746b48d657a13ce71c, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 634882f439d40ca4caab696467584d89, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 11459211264
-    m_Localized: Nuevo Juego
+  - m_Id: 6789521408
+    m_Localized: "Misi\xF3n 1"
     m_Metadata:
       m_Items: []
-  - m_Id: 9048024580206592
-    m_Localized: Presione "E" para entrar
+  - m_Id: 78738612224
+    m_Localized: "Misi\xF3n 2"
     m_Metadata:
       m_Items: []
-  - m_Id: 9048089772273664
-    m_Localized: Presione "E" para salir
+  - m_Id: 84392534016
+    m_Localized: "Misi\xF3n 3"
     m_Metadata:
       m_Items: []
-  - m_Id: 9076915406102528
-    m_Localized: Guardar y salir
+  - m_Id: 21536694272
+    m_Localized: Llega al final en el parkour
     m_Metadata:
       m_Items: []
-  - m_Id: 9076879230230528
-    m_Localized: Ver easter eggs
+  - m_Id: 80969981952
+    m_Localized: 'Completa '
     m_Metadata:
       m_Items: []
-  - m_Id: 9076855314309120
-    m_Localized: Ver misiones
-    m_Metadata:
-      m_Items: []
-  - m_Id: 9077966255415296
-    m_Localized: 'Pausado
-
-'
+  - m_Id: 87060111360
+    m_Localized: Termina la carrera
     m_Metadata:
       m_Items: []
   references:

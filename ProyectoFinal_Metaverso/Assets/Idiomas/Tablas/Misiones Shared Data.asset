@@ -10,47 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: MenuPrincipal Shared Data
+  m_Name: Misiones Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: MenuPrincipal
-  m_TableCollectionNameGuidString: 024ef5820c1a7a746b48d657a13ce71c
+  m_TableCollectionName: Misiones
+  m_TableCollectionNameGuidString: 634882f439d40ca4caab696467584d89
   m_Entries:
-  - m_Id: 11459211264
-    m_Key: NuevoJuego
+  - m_Id: 6789521408
+    m_Key: M1N
     m_Metadata:
       m_Items: []
-  - m_Id: 9048024580206592
-    m_Key: 'Entrar '
+  - m_Id: 21536694272
+    m_Key: M1D
     m_Metadata:
       m_Items: []
-  - m_Id: 9048089772273664
-    m_Key: Salir
+  - m_Id: 78738612224
+    m_Key: M2N
     m_Metadata:
       m_Items: []
-  - m_Id: 9076855314309120
-    m_Key: Misiones
+  - m_Id: 80969981952
+    m_Key: M2D
     m_Metadata:
       m_Items: []
-  - m_Id: 9076879230230528
-    m_Key: EasterEggs
+  - m_Id: 84392534016
+    m_Key: M3N
     m_Metadata:
       m_Items: []
-  - m_Id: 9076915406102528
-    m_Key: SalirPausa
-    m_Metadata:
-      m_Items: []
-  - m_Id: 9077966255415296
-    m_Key: Pausa
+  - m_Id: 87060111360
+    m_Key: M3D
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 8417822608404250648
+    rid: 8417823175363788802
   references:
     version: 2
     RefIds:
-    - rid: 8417822608404250648
+    - rid: 8417823175363788802
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1730596306796
+        m_CustomEpoch: 1732759112335

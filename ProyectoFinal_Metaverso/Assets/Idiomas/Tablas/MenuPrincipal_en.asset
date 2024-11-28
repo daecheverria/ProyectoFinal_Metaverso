@@ -30,6 +30,22 @@ MonoBehaviour:
     m_Localized: Press "E" to exit
     m_Metadata:
       m_Items: []
+  - m_Id: 9076915406102528
+    m_Localized: Save and exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076879230230528
+    m_Localized: See easter eggs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9076855314309120
+    m_Localized: See missions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9077966255415296
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
