@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: MisionesSO
   m_EditorClassIdentifier: 
   misiones:
-  - name: Mision 1
-    descripcion: Completa el parkour
+  - name: M1N
+    descripcion: M1D
     complete: 0
-  - name: Mision 2
-    descripcion: 'Supera '
+  - name: M2N
+    descripcion: M2D
     complete: 0
-  - name: Mision 3
-    descripcion: 
+  - name: M3N
+    descripcion: M3D
     complete: 0

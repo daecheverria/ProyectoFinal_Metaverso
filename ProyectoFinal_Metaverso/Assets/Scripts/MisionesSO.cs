@@ -36,4 +36,11 @@ public class MisionesSO : ScriptableObject
         }
         return false; 
     }
+    public void SetAllCheckboxesFalse()
+{
+    foreach (var mision in misiones)
+    {
+        mision.complete = false;
+    }
+}
 }

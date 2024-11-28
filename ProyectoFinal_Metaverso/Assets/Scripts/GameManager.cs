@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public MisionesSO misiones;
     public EasterEggsSO easterEggs;
+    public DialogosSO dialogos;
 
     private void Awake()
     {
@@ -29,12 +30,14 @@ public class GameManager : MonoBehaviour
     {
         SaveLoadManager.SaveMissions(misiones);
         SaveLoadManager.SaveEasterEggs(easterEggs);
+        SaveLoadManager.SaveDialogos(dialogos);
     }
 
     public void LoadData()
     {
         SaveLoadManager.LoadMissions(misiones);
         SaveLoadManager.LoadEasterEggs(easterEggs);
+        SaveLoadManager.LoadDialogos(dialogos);
     }
 
     private void OnApplicationQuit()
