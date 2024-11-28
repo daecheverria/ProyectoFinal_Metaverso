@@ -32,6 +32,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a98558dfeb090b42b80402212bed5c3
+    m_Address: Assets/Horror/HorrorScene Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ad7cfe83af8cde648858131aee4bdf1f
     m_Address: Assets/Idiomas/Tablas/Easter Eggs Shared Data.asset
     m_ReadOnly: 1
