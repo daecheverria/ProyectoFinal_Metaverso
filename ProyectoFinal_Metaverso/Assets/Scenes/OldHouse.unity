@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07924743, g: 0.07924743, b: 0.07924743, a: 1}
+  m_IndirectSpecularColor: {r: 0.07924773, g: 0.07924773, b: 0.07924773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13692,9 +13692,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:9a98558dfeb090b42b80402212bed5c3
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 12041646080
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -13721,8 +13721,9 @@ MonoBehaviour:
   localizeStringEvent: {fileID: 835548286}
   dialoguesKeysList:
   - keys:
-    - Die
-  tablename: HorrorScene
+    - T1
+    - T2
+  tablename: Dialogos
 --- !u!114 &835548288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13739,6 +13740,20 @@ MonoBehaviour:
   localizationController: {fileID: 835548287}
   dialoguePanel: {fileID: 885062693}
   textSpeed: 0.1
+--- !u!114 &835548293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835548284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0d05f62b340264caa61751791f0fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos: {fileID: 11400000, guid: babbcd6f4fe4e1746b30c17ec932fee5, type: 2}
+  dialogo: {fileID: 835548288}
 --- !u!1001 &855059132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16564,6 +16579,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3871049072346157896, guid: d5a1658373a03a2479a19aa3f929562a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 835548286}
+    - targetCorrespondingSourceObject: {fileID: 3871049072346157896, guid: d5a1658373a03a2479a19aa3f929562a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835548293}
   m_SourcePrefab: {fileID: 100100000, guid: d5a1658373a03a2479a19aa3f929562a, type: 3}
 --- !u!1 &1106086909 stripped
 GameObject:

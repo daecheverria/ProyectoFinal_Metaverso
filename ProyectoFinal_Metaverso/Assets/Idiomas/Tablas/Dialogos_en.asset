@@ -63,6 +63,14 @@ MonoBehaviour:
       TO YOUR LIFE, YOU MUST COMPLETE THE MISSIONS ACROSS THE CITY"'
     m_Metadata:
       m_Items: []
+  - m_Id: 213294139826176
+    m_Localized: Find 3 monoliths and come back with this rock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213451174567936
+    m_Localized: If you are caught you have to restart
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
