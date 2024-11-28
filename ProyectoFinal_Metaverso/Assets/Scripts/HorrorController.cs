@@ -14,6 +14,7 @@ public class HorrorController : MonoBehaviour
     public GameObject pumkin1;
     public GameObject pumkin2;
     public GameObject pumkin3;
+    public MisionesSO misiones;
 
     // Start is called before the first frame update
     void Start()
@@ -56,12 +57,13 @@ public class HorrorController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que entró en el trigger es el personaje principal
+        // Verifica si el objeto que entrï¿½ en el trigger es el personaje principal
         if (other.CompareTag("Player"))
         {
             if (object1 && object2 && object3)
             {
                 Debug.Log("El nivel termina");
+                misiones.SetCheckboxValue("M2N",true);
             }
             else
             {

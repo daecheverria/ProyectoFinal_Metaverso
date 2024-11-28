@@ -63,6 +63,14 @@ MonoBehaviour:
     m_Localized: '"..."'
     m_Metadata:
       m_Items: []
+  - m_Id: 213294139826176
+    m_Localized: Encuentra 3 monolitos y vuelve con esta roca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213451174567936
+    m_Localized: Si eres atrapado deberas reiniciar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

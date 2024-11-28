@@ -15,3 +15,5 @@ MonoBehaviour:
   dialogos:
   - dialogoID: intro
     reproducido: 0
+  - dialogoID: terror
+    reproducido: 1
