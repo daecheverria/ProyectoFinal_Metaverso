@@ -15,7 +15,7 @@ MonoBehaviour:
   misiones:
   - name: M1N
     descripcion: M1D
-    complete: 0
+    complete: 1
   - name: M2N
     descripcion: M2D
-    complete: 0
+    complete: 1

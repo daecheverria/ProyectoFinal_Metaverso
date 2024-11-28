@@ -17,3 +17,5 @@ MonoBehaviour:
     reproducido: 0
   - dialogoID: terror
     reproducido: 1
+  - dialogoID: Final
+    reproducido: 1

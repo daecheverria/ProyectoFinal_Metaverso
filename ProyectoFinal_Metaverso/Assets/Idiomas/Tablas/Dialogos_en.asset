@@ -71,6 +71,36 @@ MonoBehaviour:
     m_Localized: If you are caught you have to restart
     m_Metadata:
       m_Items: []
+  - m_Id: 221086785961984
+    m_Localized: 'You: Is that all? Was this the last test?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221537115799552
+    m_Localized: 'You: How do I return to my life!?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221636751491072
+    m_Localized: 'Misterious voice: TEST SUBJECT: CT7567. SIMULATION STATUS: TERMINATED.
+      REBOOTING SYSTEM TO OBTAIN MORE RESULTS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221482191388672
+    m_Localized: '"..."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 222018567372800
+    m_Localized: 'Misterious voice: SU MIL TONIA is an anagram of SIMULATION.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 222044085518336
+    m_Localized: "Misterious voice: REBOOTING SIMULATION. GOOD LUCK ON THE\_PATH\_AHEAD."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221992277475328
+    m_Localized: 'You: Simulation? But what are you talking about? We are in Your
+      Innocence Thousand.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

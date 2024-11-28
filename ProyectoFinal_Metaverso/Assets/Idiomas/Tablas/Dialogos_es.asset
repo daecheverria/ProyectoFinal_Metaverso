@@ -71,6 +71,39 @@ MonoBehaviour:
     m_Localized: Si eres atrapado deberas reiniciar
     m_Metadata:
       m_Items: []
+  - m_Id: 221086785961984
+    m_Localized: "Tu: \xBFEso es todo? \xBFEsta fue la \xFAltima prueba?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221482191388672
+    m_Localized: '"..."
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221537115799552
+    m_Localized: "Tu: \xBF\xA1C\xF3mo regreso a mi vida!?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221636751491072
+    m_Localized: "Voz misteriosa: SUJETO DE PRUEBA: CT7567. STATUS DE LA SIMULACI\xD3N:
+      TERMINADA. REINICIANDO EL SISTEMA PARA OBTENER M\xC1S RESULTADOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221992277475328
+    m_Localized: "Tu: \xBFSimulaci\xF3n? \xBFPero de qu\xE9 est\xE1n hablando? Estamos
+      en Su Inocia Mil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 222018567372800
+    m_Localized: "Voz misteriosa: SU INOCIA MIL anagrama de SIMULACI\xD3N"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 222044085518336
+    m_Localized: "Voz misteriosa: REINICIANDO SIMULACI\xD3N. MUCHA SUERTE EN EL CAMINO
+      QUE TIENES ADELANTE"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
